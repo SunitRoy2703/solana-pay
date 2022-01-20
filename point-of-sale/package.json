@@ -9,9 +9,9 @@
         "access": "public"
     },
     "scripts": {
-        "clean": "shx rm -rf dist .parcel-cache",
-        "build": "yarn clean && parcel build src/index.html",
-        "start": "yarn clean && parcel src/index.html",
+        "clean": "shx rm -rf public .parcel-cache",
+        "build": "yarn clean && parcel build src/index.html --dist-dir public",
+        "start": "yarn clean && parcel src/index.html --dist-dir public",
         "docs": "shx rm -rf docs && typedoc && shx cp .nojekyll docs/",
         "fmt": "prettier --write '{*,**/*}.{js,ts,jsx,tsx,json}'",
         "lint": "eslint . && prettier --check '{*,**/*}.{js,ts,jsx,tsx,json}'",
@@ -54,6 +54,7 @@
         "prettier": "^2.5.1",
         "shx": "^0.3.4",
         "tslib": "^2.3.1",
-        "typescript": "~4.5.4"
+        "typescript": "~4.5.4",
+        "vercel": "^23.1.2"
     }
 }
